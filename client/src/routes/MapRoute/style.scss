@@ -1,0 +1,27 @@
+$header-height: 150px;
+$sidebar-width: 200px;
+
+#map__header {
+  height: $header-height;
+  background-color: #BBBBBB;
+}
+
+#map__sidebar {
+  position: absolute;
+  top: $header-height;
+  bottom: 0;
+  background-color: #DDDDDD;
+  width: $sidebar-width;
+}
+
+#map__map {
+  position: absolute;
+  top: $header-height;
+  left: $sidebar-width;
+  right: 0;
+  bottom: 0;
+
+  > div {
+    height: 100%;
+  }
+}
