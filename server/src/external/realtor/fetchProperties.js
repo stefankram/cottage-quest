@@ -1,7 +1,11 @@
 import axios from 'axios';
+import qs from 'querystring';
 
 const URL = 'https://api2.realtor.ca/Listing.svc/PropertySearch_Post';
 const DEFAULT_PARAMS = {
+  CultureId: 1,
+  ApplicationId: 1,
+  PropertySearchTypeId: 1,
   ZoomLevel: '13',
   LatitudeMax: '43.74208',
   LongitudeMax: '-79.31669',
@@ -9,32 +13,20 @@ const DEFAULT_PARAMS = {
   LongitudeMin: '-79.47822',
   Sort: '1-A',
   PropertyTypeGroupID: '1',
-  PropertySearchTypeId: '1',
   TransactionTypeId: '2',
   PriceMax: '1000000',
   BedRange: '3-0',
   Keywords: 'Waterfront',
   Currency: 'CAD',
   RecordsPerPage: '12',
-  ApplicationId: '1',
-  CultureId: '1',
   Version: '7.0',
   CurrentPage: '1',
 };
 
-function generateFormData(params = {}) {
-  const formData = new FormData();
-  const data = {
-    ...DEFAULT_PARAMS,
-    ...params,
-  };
-
-  Object.entries(data).forEach(([name, val]) => {
-    formData.set(name, val);
-  });
-
-  return formData;
-}
+const generateFormData = (params = {}) => qs.stringify({
+  ...DEFAULT_PARAMS,
+  ...params,
+});
 
 export default async function () {
   const data = generateFormData();
@@ -45,6 +37,7 @@ export default async function () {
     data,
     headers: {
       Origin: 'https://www.realtor.ca',
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
 }
