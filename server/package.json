@@ -1,0 +1,15 @@
+{
+  "name": "cottage-quest-server",
+  "version": "0.1.0",
+  "author": "Stefan Kramreither",
+  "private": true,
+  "main": "index.js",
+  "repository": "https://github.com/stefankram/cottage-quest",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1"
+  }
+}
