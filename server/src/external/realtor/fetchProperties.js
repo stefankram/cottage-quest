@@ -6,19 +6,15 @@ const DEFAULT_PARAMS = {
   CultureId: 1,
   ApplicationId: 1,
   PropertySearchTypeId: 1,
-  ZoomLevel: '13',
-  LatitudeMax: '43.74208',
-  LongitudeMax: '-79.31669',
-  LatitudeMin: '43.63750',
-  LongitudeMin: '-79.47822',
   Sort: '1-A',
   PropertyTypeGroupID: '1',
   TransactionTypeId: '2',
   PriceMax: '1000000',
+  PriceMin: '200000',
   BedRange: '3-0',
   Keywords: 'Waterfront',
   Currency: 'CAD',
-  RecordsPerPage: '12',
+  RecordsPerPage: '200',
   Version: '7.0',
   CurrentPage: '1',
 };
@@ -28,8 +24,8 @@ const generateFormData = (params = {}) => qs.stringify({
   ...params,
 });
 
-export default async function () {
-  const data = generateFormData();
+export default async function (params = {}) {
+  const data = generateFormData(params);
 
   return await axios({
     url: URL,

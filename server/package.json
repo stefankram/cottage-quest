@@ -6,13 +6,15 @@
   "main": "src/index.js",
   "repository": "https://github.com/stefankram/cottage-quest",
   "scripts": {
-    "start": "yarn nodemon -r esm"
+    "start": "yarn nodemon -r esm",
+    "start:prod": "NODE_ENV=production node -r esm ./src/index.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "cors": "^2.8.5",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "querystring": "^0.2.0"

@@ -1,27 +1,38 @@
 $header-height: 150px;
-$sidebar-width: 200px;
 
 #map__header {
   height: $header-height;
   background-color: #BBBBBB;
-}
+  line-height: 140px;
 
-#map__sidebar {
-  position: absolute;
-  top: $header-height;
-  bottom: 0;
-  background-color: #DDDDDD;
-  width: $sidebar-width;
+  > h1 {
+    font-family: Robot, sans-serif;
+    margin: 0;
+  }
 }
 
 #map__map {
   position: absolute;
   top: $header-height;
-  left: $sidebar-width;
+  left: 0;
   right: 0;
   bottom: 0;
 
   > div {
     height: 100%;
   }
+}
+
+.p-text {
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+
+.p-bold {
+  font-weight: bold;
+}
+
+.property__image {
+  background-size: contain !important;
+  height: 175px;
 }
