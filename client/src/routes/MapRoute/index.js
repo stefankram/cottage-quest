@@ -24,9 +24,6 @@ export default function MapRoute() {
 
   return (
     <>
-      <header id="map__header">
-        <h1 style={{ textAlign: 'center' }}>Cottage Quest</h1>
-      </header>
       <section id="map__map">
         <LeafletMap
           center={BALA}

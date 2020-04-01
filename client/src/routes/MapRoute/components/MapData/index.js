@@ -18,9 +18,9 @@ const getPhoto = (p) => p.Property.Photo[0].MedResPath;
 
 const filterProperties = (p) => p.Property.OwnershipType !== 'Condominium'
   && !p.PublicRemarks.match(/(amenities|condo)/i)
-  && !p.Property.Address.AddressText.match(/W\/A/i)
-  && !p.Property.Address.AddressText.match(/ISLAND/i)
-  && p.PublicRemarks.match(/south.*exposure/i);
+  && !p.Property.Address.AddressText.match(/w\/a/i)
+  && !p.Property.Address.AddressText.match(/island/i)
+  && p.PublicRemarks.match(/(s|south|southern) ?-?(e|east|w|west)?\s+exp/i);
 
 export default function MapData({ properties }) {
   return (
